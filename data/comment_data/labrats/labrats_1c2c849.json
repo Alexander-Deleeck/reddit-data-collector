@@ -1,0 +1,563 @@
+[
+    {
+        "comment_id": "kz8z7u1",
+        "author": "le_nakle",
+        "score": 182,
+        "text": "Companies that sell isotope radiolabelled chemicals\u2026",
+        "replies": [
+            {
+                "comment_id": "kz8zxeo",
+                "author": "Phalcone42",
+                "score": 85,
+                "text": "My intuition is that those are a real pain to synthesize. Especially when you want the radiolabeled species in just the right spot.",
+                "replies": [
+                    {
+                        "comment_id": "kz9ko0f",
+                        "author": "Kriggy_",
+                        "score": 30,
+                        "text": "u/le_nakle\n\nas someone who does that for living\u2026 it depends :D there are few things to consider:\n\n1) price of the isotope source 2) price of highly skilled workers 3) market is small\n\nAlso, consider yourself lucky if you have ANYTHING 14C available. It was already expensive in the first place but since all sources are from Russia gl getting some.",
+                        "replies": [
+                            {
+                                "comment_id": "kz9lapi",
+                                "author": "le_nakle",
+                                "score": 5,
+                                "text": "Just had to order some\u2026 cash money is an understatement",
+                                "replies": []
+                            }
+                        ]
+                    },
+                    {
+                        "comment_id": "kz90h3e",
+                        "author": "le_nakle",
+                        "score": 35,
+                        "text": "iirc the chemical we buy can be made conventionally in 2 steps with the radioisotope at the right position from 14C syngas\u2026 but the expertise and H&S considerations is what you're paying for I guess",
+                        "replies": [
+                            {
+                                "comment_id": "kz95lld",
+                                "author": "Chemboi69",
+                                "score": 25,
+                                "text": "Do you think that making any kind of isotopically pure gas is cheap? Also the amount of these compounds that are produced is so small that you have no economies of scale like for bulk chemicals",
+                                "replies": [
+                                    {
+                                        "comment_id": "kz9kz9i",
+                                        "author": "Kriggy_",
+                                        "score": 4,
+                                        "text": "Tritium is fairly cheap. Realisticaly, for one labeling experiment we use about 500usd worth of tritium",
+                                        "replies": [
+                                            {
+                                                "comment_id": "kzapjaf",
+                                                "author": "Direct_Wind4548",
+                                                "score": 7,
+                                                "text": "Isn't tritium a top 5 most expensive materials humans produce?",
+                                                "replies": [
+                                                    {
+                                                        "comment_id": "kzb2x7e",
+                                                        "author": "illiter-it",
+                                                        "score": 8,
+                                                        "text": "$30k per gram and expected to increase",
+                                                        "replies": [
+                                                            {
+                                                                "comment_id": "kzb41g4",
+                                                                "author": "Direct_Wind4548",
+                                                                "score": 2,
+                                                                "text": "Oof. Although, given nuclear non-proliferation is gasping now since the violations of the 1994 Budapest Memorandum, and current club members spinning up warhead production, maybe tritium will go down in a few years.",
+                                                                "replies": []
+                                                            }
+                                                        ]
+                                                    },
+                                                    {
+                                                        "comment_id": "kzclgt6",
+                                                        "author": "Kriggy_",
+                                                        "score": 1,
+                                                        "text": "Well possibly but you dont use it in large batches. We have up to 300 Ci that equals for ca. 30 miligrams. This is enough for 10-15 experiments. The whole batch iirc is 13k usd. Good enough for maybe two years of work",
+                                                        "replies": []
+                                                    }
+                                                ]
+                                            }
+                                        ]
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "comment_id": "kzx2mw1",
+                "author": "flashmeterred",
+                "score": 2,
+                "text": "Good luck. War in ukraine and russian sanctions has led to less availability and cheap competition. Enrichment reactors have been shut down reducing the worlds supply - I think Ukraine were the exclusive producers of something like 30 isotypes at that time, as well as being major suppliers of a bunch of others.\n\n14C, 35S - pretty high use radioisotopes now expensive as hell or just not available with no expected delivery date. Its why researchers have been trying to move out of radioactive work (protein proximity assays and the like) despite the pushback from more traditional researchers.",
+                "replies": []
+            }
+        ]
+    },
+    {
+        "comment_id": "kz97tee",
+        "author": "Norby314",
+        "score": 122,
+        "text": "To be fair, that is literally what happens when the grant ends and we are under Budget \n\"We have $100,000 to spend until next week, what is the most expensive stuff we could buy? \"",
+        "replies": [
+            {
+                "comment_id": "kz9fgag",
+                "author": "canadian-user",
+                "score": 47,
+                "text": "I worked in a government lab and my supervisor was like this too when we got to the end of the current funding period, we were just sending out stuff to get re-sequenced or buying new fancier instruments (frankly we already had way too much nice stuff, as someone coming from academia, we had like 7 sets of those nice eppendorf pipettes shared among like 3 people in that government lab compared to everyone fighting over one of the 3 P20's in academia). It was all just so we got the same amount of budget for the next year since if you don't use it all they're obviously going to cut it.",
+                "replies": [
+                    {
+                        "comment_id": "kzzt751",
+                        "author": "Milch_und_Paprika",
+                        "score": 2,
+                        "text": "That's the real problem. I bet many managers have no issue returning the leftover money. However, if politicians think that's *extra* money, not just an expense you managed to skillfully avoid this year, you just know they're gonna cut it from next year's budget.",
+                        "replies": []
+                    }
+                ]
+            },
+            {
+                "comment_id": "kz9ai1u",
+                "author": "DurianBig3503",
+                "score": 40,
+                "text": "What fucking grants are you getting with 100.000 to waste and can i have some? I have about 10 single cell multiomic experiments i would like to do.",
+                "replies": [
+                    {
+                        "comment_id": "kzac5qt",
+                        "author": "FoucaultsPudendum",
+                        "score": 40,
+                        "text": "Government grants baybee. It's insane. My old PI ended a weekly meeting one week with \"We have a month to spend $250,000. Ideas? Don't say -80s.\" and then we ping-ponged around the room for like half an hour. We ended up getting a couple of benchtop sequencers and a new ultracentrifuge.",
+                        "replies": []
+                    },
+                    {
+                        "comment_id": "kzazv2v",
+                        "author": "hyponiksxcqz",
+                        "score": 13,
+                        "text": "tbh if someone budgets hiring a postdoc/grad student and it doesn't happen that year then there is the extra money. Most of grant funding goes to just paying people",
+                        "replies": []
+                    }
+                ]
+            },
+            {
+                "comment_id": "kzb2zhc",
+                "author": "illiter-it",
+                "score": 5,
+                "text": "Got a fat raise as an undergrad out of that.",
+                "replies": []
+            }
+        ]
+    },
+    {
+        "comment_id": "kz8z1j7",
+        "author": "mango_pan",
+        "score": 108,
+        "text": "Companies that sell magnetic racks\n\n*averting gazes*",
+        "replies": [
+            {
+                "comment_id": "kz9ikkz",
+                "author": "Darwins_Dog",
+                "score": 38,
+                "text": "Thank god for 3D printers. An $800 rack costs $60, and that's mostly for the magnets.",
+                "replies": [
+                    {
+                        "comment_id": "kzape1h",
+                        "author": "stars9r9in9the9past",
+                        "score": 23,
+                        "text": "That $740 you're paying extra for went towards all the time and labor of everyone involved in pitching the idea, testing the best way to produce them, the R&D of little tweaks that never made it to the production line, marketing, comp and benefits, etc.\n\nMeanwhile, one of you little lab rats just walked in and was like \"Uh, so I think I can probably just print this, and like insert some magnets off of Amazon...\"\n\nDo you think that's fair to the system? To our sweet slice of capitalism and freedom? Who do you think you are trying to upend our beautiful corporate machine like that? How *daaaaare* you.",
+                        "replies": [
+                            {
+                                "comment_id": "kzdsqfo",
+                                "author": "Darwins_Dog",
+                                "score": 3,
+                                "text": "Those poor CEOs...",
+                                "replies": []
+                            },
+                            {
+                                "comment_id": "kzk8y6z",
+                                "author": "highnelwyn",
+                                "score": 1,
+                                "text": "People pay for those? I always tell the sales rep you have to give us a free one or we won't buy the beads from you. Always works, they want that long term money once you're on the hook.",
+                                "replies": []
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "comment_id": "kz9i8oc",
+                "author": "Spherical_Melon",
+                "score": 13,
+                "text": "You can get magnetic racks from Amazon for about $40, ways better than the dynamag ripoff $700 a pop rack. Unbelievable what they chareg",
+                "replies": [
+                    {
+                        "comment_id": "kzcdwzh",
+                        "author": "Pincushion",
+                        "score": 1,
+                        "text": "I recently switched from dynmag to sepmag for all my bench top scale work. They are pretty incredible, especially the larger ones.",
+                        "replies": []
+                    }
+                ]
+            },
+            {
+                "comment_id": "kz9ooes",
+                "author": "bluskale",
+                "score": 12,
+                "text": "Biorad's $44 for a little blue-ice pack you could buy at the grocery store for $2 always cracks me up.",
+                "replies": []
+            }
+        ]
+    },
+    {
+        "comment_id": "kz978lg",
+        "author": "Bryek",
+        "score": 46,
+        "text": "My most used primary antibody is $650 USD (whole mount). And that is the cheapest one on the market. $400? Thats cheap.",
+        "replies": [
+            {
+                "comment_id": "kza3b5k",
+                "author": "gabrielleduvent",
+                "score": 13,
+                "text": "Abcam Abs are stupidly expensive, and evidently they sold themselves to Danaher. We are preparing to see the price go up to 1K per.",
+                "replies": [
+                    {
+                        "comment_id": "kza3i32",
+                        "author": "Bryek",
+                        "score": 2,
+                        "text": "Thankfully, I have managed to avoid Abcam ones and have managed to vet cheaper versions.",
+                        "replies": []
+                    },
+                    {
+                        "comment_id": "kzkmtkj",
+                        "author": "mylittlesyn",
+                        "score": 1,
+                        "text": "I took advantage a lot of their program where you can post results and protocols and if you show one of their antibodies works in a novel way, you can get a coupon for a free antibody. Trick was I just kept using it to get another free antibody because I was working with axolotls and everything was novel \ud83d\ude02\n\nMy scam pretty much funded most of my gradschool research, and I got like 6 new antibodies out of it. The customer services is super friendly and they're the ones you call for the discount codes and they make it pretty easy on you NGL. \n\nPlus they give like customer rewards for each post and I accumulated like $300 worth of Amazon gift cards at the end of my masters.",
+                        "replies": []
+                    }
+                ]
+            },
+            {
+                "comment_id": "kz9tscy",
+                "author": "newappeal",
+                "score": 4,
+                "text": "How many experiments does that amount get you through? I haven't ever had to buy antibodies myself and haven't worked with them in years",
+                "replies": [
+                    {
+                        "comment_id": "kz9yobz",
+                        "author": "Bryek",
+                        "score": 4,
+                        "text": "It depends. I've bought 3 or 4 a year when I was doing larger whole mount experiments. You only get 100uL, and I was using it at 1:400.",
+                        "replies": [
+                            {
+                                "comment_id": "kzbgmfv",
+                                "author": "Tiny_Rat",
+                                "score": 1,
+                                "text": "It also depends a lot what application they're being used for. For example in flow cytometry, 1:400 is an impossible dilution in many cases.",
+                                "replies": [
+                                    {
+                                        "comment_id": "kzbgx3u",
+                                        "author": "Bryek",
+                                        "score": 3,
+                                        "text": "Aye. But the nice thing with flow is you don't need a huge volume. Some of my experiments were in 2.5 to 3 mL. Lol",
+                                        "replies": [
+                                            {
+                                                "comment_id": "kzhoza1",
+                                                "author": "Tiny_Rat",
+                                                "score": 1,
+                                                "text": "3ml is massive for flow, haha\n\nMost of mine are stained in 50ul and run in 100ul",
+                                                "replies": [
+                                                    {
+                                                        "comment_id": "kzhqiku",
+                                                        "author": "Bryek",
+                                                        "score": 2,
+                                                        "text": "Yep. Whole Mount tissue is a bitchch some times. Lol",
+                                                        "replies": []
+                                                    }
+                                                ]
+                                            }
+                                        ]
+                                    }
+                                ]
+                            },
+                            {
+                                "comment_id": "kzhpzjl",
+                                "author": "imanoctothorpe",
+                                "score": 1,
+                                "text": "*cries in ChIP*\n\nI do a lot of time course experiments where a single replicate uses like 60 uL of antibody\u2026 we spend so fucking much on antibodies it's insane. I've bought 3 tubes of my most used one so far this year.",
+                                "replies": []
+                            }
+                        ]
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "comment_id": "kz97n3g",
+        "author": "ellie_love1292",
+        "score": 25,
+        "text": "Not me, a large molecule R&D labrat and also an MS patient, thinking this is about companies charging $6k/mo for MAbs \ud83d\ude02\ud83d\ude02\ud83d\ude02",
+        "replies": [
+            {
+                "comment_id": "kz9irfo",
+                "author": "CoomassieBlue",
+                "score": 10,
+                "text": "At least that's mg-scale (also a large molecule labrat on a therapeutic mAb). I've paid absolutely disgusting amounts for custom antibodies for PK/ADA assays. I vaguely recall paying something like $11k for 100 ug of an ELISA coating antibody that was only enough for 9-10 plates.",
+                "replies": [
+                    {
+                        "comment_id": "kz9iwm2",
+                        "author": "ellie_love1292",
+                        "score": 7,
+                        "text": "My coworker had to order bulk enzyme for an activity assay. It was like 500k. \ud83d\ude2d",
+                        "replies": [
+                            {
+                                "comment_id": "kz9jfr6",
+                                "author": "CoomassieBlue",
+                                "score": 2,
+                                "text": "Yikes. I could buy one of the multi-disc Gyrolab instruments for that price\u2026",
+                                "replies": [
+                                    {
+                                        "comment_id": "kz9odi0",
+                                        "author": "ellie_love1292",
+                                        "score": 3,
+                                        "text": "Pros of working in pharma- budget is not academia",
+                                        "replies": [
+                                            {
+                                                "comment_id": "kz9ph7n",
+                                                "author": "CoomassieBlue",
+                                                "score": 2,
+                                                "text": "\ud83d\udcaf, I would really struggle if I ever went back to academia.",
+                                                "replies": []
+                                            }
+                                        ]
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "comment_id": "kz9a5mk",
+                "author": "ladybughappy",
+                "score": 1,
+                "text": "What's r&d mean",
+                "replies": [
+                    {
+                        "comment_id": "kz9c2j9",
+                        "author": "ellie_love1292",
+                        "score": 5,
+                        "text": "Research and Development",
+                        "replies": [
+                            {
+                                "comment_id": "kz9c9l9",
+                                "author": "ladybughappy",
+                                "score": 1,
+                                "text": "Ok thank you",
+                                "replies": []
+                            }
+                        ]
+                    },
+                    {
+                        "comment_id": "kz9c7rp",
+                        "author": "Walking_Bandaid",
+                        "score": 4,
+                        "text": "Research & Development",
+                        "replies": []
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "comment_id": "kzahzpz",
+        "author": "wooooooooocatfish",
+        "score": 17,
+        "text": "Because the rabbits goats and rats all die for your sins",
+        "replies": [
+            {
+                "comment_id": "kzb6fvp",
+                "author": "mh078",
+                "score": 10,
+                "text": "Can't forget the cows for their Fetal Clone.",
+                "replies": [
+                    {
+                        "comment_id": "kzb9ygi",
+                        "author": "smh_00",
+                        "score": 5,
+                        "text": "Many even Rab these days are monoclonal. The rabbit only dies once to live forever.",
+                        "replies": [
+                            {
+                                "comment_id": "kzd64d4",
+                                "author": "wooooooooocatfish",
+                                "score": 1,
+                                "text": "One rabbit gets to live forever, its friends that made worse antibodies are less lucky",
+                                "replies": []
+                            },
+                            {
+                                "comment_id": "kzdsxxq",
+                                "author": "alexa647",
+                                "score": 1,
+                                "text": "Yeah, we definitely go through more than one rabbit in the pursuit of making a monoclonal sadly.",
+                                "replies": [
+                                    {
+                                        "comment_id": "kze3qh5",
+                                        "author": "smh_00",
+                                        "score": 1,
+                                        "text": "Good point. Still. One you get it, lasts effectively forever.",
+                                        "replies": []
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "comment_id": "kze1y9e",
+                "author": "reelznfeelz",
+                "score": 2,
+                "text": "A large proportion are recombinant monoclonal though.",
+                "replies": [
+                    {
+                        "comment_id": "kze2j84",
+                        "author": "wooooooooocatfish",
+                        "score": 3,
+                        "text": "I promise you that no antibody producer challenges a single rabbit to start the process. That is my only point",
+                        "replies": []
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "comment_id": "kz9nbve",
+        "author": "benemivikai4eezaet0",
+        "score": 12,
+        "text": "Miltenyi is the Apple of cell biology",
+        "replies": []
+    },
+    {
+        "comment_id": "kz9d4p7",
+        "author": "Mandory_the_strong",
+        "score": 10,
+        "text": "Hahahahahahahaha, holy crap, I can't stop laughing at this!!!! Hahahahahaha, $400 for CD3-apc, 25 tests?! Hahahahahaha",
+        "replies": []
+    },
+    {
+        "comment_id": "kza3i1y",
+        "author": "No_Leopard_3860",
+        "score": 12,
+        "text": "Isn't this basically 97% of the biotech industry? \n\n\nAt least from a finance POV; average life cycle of a biotech company:\n\nresearching something today that might potentially be useful in 5 to XYZ years (but most likely never) after pumping a black hole amount of money and post doc souls into it, dealing with harsh regulations (FDA and stuff), eventually going bankrupt like the other 99,...% who tried,....\n\n\nHyperbolic, but biotech seems to be an especially hard field to establish a company, that's how I imagined the high prices came from (the <1% who survived the meat grinder have little to no competition, the hurdle for a random startup to enter the market is just too high in most cases)",
+        "replies": []
+    },
+    {
+        "comment_id": "kz9e70g",
+        "author": "AhhSomeSauce",
+        "score": 5,
+        "text": "Not gonna lie this is my PI at the moment. Has so much money that needs to be spent as grants end that they ask us for a \"wish list\"\n\nI'm spoiled and my next position is going to be a big reality check",
+        "replies": []
+    },
+    {
+        "comment_id": "kz9ltyf",
+        "author": "PseudocodeRed",
+        "score": 7,
+        "text": "Government job gang where you at",
+        "replies": []
+    },
+    {
+        "comment_id": "kz979xn",
+        "author": "IceColdPorkSoda",
+        "score": 10,
+        "text": "What would be the cost in time and materials for you to make it yourself? If it's less of a burden than just buying the vials go ahead and do it yourself.",
+        "replies": [
+            {
+                "comment_id": "kza982f",
+                "author": "ExplanationShoddy204",
+                "score": 14,
+                "text": "Yes but to be fair it would take you a lot of time and effort to make a bottle of Coca Cola from the individual constituents yourself, but that doesn't mean a can of coke should cost $50.",
+                "replies": []
+            },
+            {
+                "comment_id": "kzcmf5b",
+                "author": "Anabaena_azollae",
+                "score": 5,
+                "text": "Yeah, $400 for something like this is actually really reasonable. Even if you have a working cell bank of a stable line and a properly developed process, it's hard to make the economics pencil at a small scale. $400 is like a day's salary for a scientist making $105k not including overhead. Cell culture media is expensive.  Protein A resin is expensive. Fluorescent dyes can be expensive.  QCing the material isn't straightforward and a failed batch is expensive.",
+                "replies": []
+            },
+            {
+                "comment_id": "kzdgafc",
+                "author": "kenneththeswan",
+                "score": 1,
+                "text": "Buying the heavy and light chain plasmids (assuming you outsource cloning and synthesis) would be about \u00a31k. You generally need 1mg total DNA per litre so have to pay per maxiprep (around \u00a350 per prep). Media and transfection reagent generally cost around \u00a31k per litre plus additional media to bulk up the cells. Transfect, then harvest after 5 days, purify with protein A and (optional) SEC, concentrate using Amicons (single use, around \u00a310 each) and QC the protein with SDS-PAGE and optional endotoxin testing (single use, around \u00a315 per endotoxin cartridge). A nice antibody gets upwards of 100 mg/L expression, a bad one as low as 5 mg/L (or zero!!). You can lose up to 50% of your product during purification, especially if the biophys sucks. Then if it's for flow you'd additionally need to couple the fluorophore. \nWe used to quote an overall turnaround time including DNA synthesis of 10 weeks for an efficient internal platform and transfected around 20 L per week. Obviously I'm talking a much larger scale than you'd need for a casual flow experiment but the timescale and percentage loss is similar for small batches.",
+                "replies": []
+            }
+        ]
+    },
+    {
+        "comment_id": "kzaa80t",
+        "author": "summerwine09",
+        "score": 4,
+        "text": "A lot of labor and techniques are involved in synthesizing antibodies - especially if you need very pure grade stock. Also don't even get me started on the amount of QCs that need to be done\u2026.",
+        "replies": []
+    },
+    {
+        "comment_id": "kz9npqs",
+        "author": "ExitPuzzleheaded2987",
+        "score": 7,
+        "text": "Coz your goal is not to make the antibodies but to look for the result of your experiment of interest. It might take you months plus a lot of equipment to make and validate the antibodies but when you buy them, it is here in a few days and you can start your experiment next week. In addition, some antibodies are not working as good as what you want. So, you might want to try another vial and stuff. Imagine doing that yourself...\n\nYou think weeks or months of work+ time is not worth the 400 dollar? I think you need to learn the meaning of opportunity cost from econ101.",
+        "replies": []
+    },
+    {
+        "comment_id": "kz9me80",
+        "author": "CAXHIBRUH",
+        "score": 3,
+        "text": "Because they expect the people buying to be paying with grant money",
+        "replies": [
+            {
+                "comment_id": "kz9mflp",
+                "author": "SokkaHaikuBot",
+                "score": 3,
+                "text": "^[Sokka-Haiku](https://www.reddit.com/r/SokkaHaikuBot/comments/15kyv9r/what_is_a_sokka_haiku/) ^by ^CAXHIBRUH:\n\n*Because they expect*\n\n*The people buying to be*\n\n*Paying with grant money*\n\n---\n^Remember ^that ^one ^time ^Sokka ^accidentally ^used ^an ^extra ^syllable ^in ^that ^Haiku ^Battle ^in ^Ba ^Sing ^Se? ^That ^was ^a ^Sokka ^Haiku ^and ^you ^just ^made ^one.",
+                "replies": []
+            },
+            {
+                "comment_id": "kzastii",
+                "author": "Yoojine",
+                "score": 3,
+                "text": "Actually for us it's 1/3 from academia, 2/3 from industry, and I'm pretty sure it's the same industry wide.",
+                "replies": []
+            }
+        ]
+    },
+    {
+        "comment_id": "kz9g531",
+        "author": "WoodpeckerOwn4278",
+        "score": 2,
+        "text": "This made me chuckle. Trying to figure out how to incorporate into next lab talk.",
+        "replies": []
+    },
+    {
+        "comment_id": "kzb3k6w",
+        "author": "PersephoneInSpace",
+        "score": 2,
+        "text": "Especially when you titrate the flow antibody and you have to use it at the recommended dilution instead of more diluted \ud83e\udd72",
+        "replies": []
+    },
+    {
+        "comment_id": "kzdrke6",
+        "author": "spodoptera",
+        "score": 2,
+        "text": "Also, couple that with inefficient customer service (depends on the company of course)\n\nThere's a thermofisher-affiliated distributor in Ireland, they drive me crazy. There's a product I ordered 2 years ago, was supposed to arrive in 2 weeks. Then approximately every 10 days I'd get a notification , roughly saying \"oh this is delayed, dispatch date is in 2 weeks). For 17 FCKIN MONTHS.  After like 3 months I had told them I don't care, this is obviously not coming, cancel the order. They said it was already delivered in their warehouse and they could not cancel the order. Yet it took another 14 months to be delivered ?\n\n\nLately same company, they send a quote saying product dispatched in two days if the order is placed. I call them, they confirm they have they have it and can deliver it that fast. 1 week later (4 days past due date), dispatch date is delayed by 3 weeks. 2 weeks later they delay it one week further. I'm still waiting to see what will happen. And when you call them they're just useless and can't give you anymore information than what's on the website. Asked them to actually get on top of it, call the supplier and not send an email that would get a reply in 2 working days, as it's a product we needed urgently 3 weeks ago and THEY told us they had it in stock\nThe rep's reply \" alright mr. x, i'll send an email to the supplier and get a reply in the next 48 hours\". Fuck'em really.\n\nGot to the bottom of it, learned that the supplier actually makes the product on demand, the distributor had no stock of it, they just straight up lied about it.\n\n\nI'm sorry, this is all recent and i'm obviously still furious over this nonsense!",
+        "replies": []
+    },
+    {
+        "comment_id": "kz96354",
+        "author": "huh_phd",
+        "score": 3,
+        "text": "*companies*",
+        "replies": []
+    },
+    {
+        "comment_id": "kzaafj4",
+        "author": "Faowhin",
+        "score": 1,
+        "text": "Dude, this is our genomics core facility when I need a few reads just as a spike in...",
+        "replies": []
+    }
+]

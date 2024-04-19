@@ -1,0 +1,899 @@
+[
+    {
+        "comment_id": "kzglktd",
+        "author": "Eternityislong",
+        "score": 1454,
+        "text": "Someone had to have turned on the hot plate at some point overnight and that same person or someone else turned it off an hour later when they saw what was happening.",
+        "replies": [
+            {
+                "comment_id": "kzgmm08",
+                "author": "Rare_Asparagus629",
+                "score": 718,
+                "text": "Yeah, the fact that its specifically melted at the bottom makes me think it had to be the hot plate.",
+                "replies": [
+                    {
+                        "comment_id": "kzhssip",
+                        "author": "Level9TraumaCenter",
+                        "score": 157,
+                        "text": "That it was hot enough to bake the plastic to foamy black goo suggests the hot plate was set at a fairly high temperature for a pretty long duration, too.\n\nThe case is probably polypropylene, melts around 160C and [starts to decompose around 220-230C](https://link.springer.com/chapter/10.1007/978-94-011-4421-6_34) with open flame another 100C up from there.",
+                        "replies": []
+                    }
+                ]
+            },
+            {
+                "comment_id": "kzh5g3t",
+                "author": "Ru-tris-bpy",
+                "score": 170,
+                "text": "I've also had hot plates just lose their shit and heat up without being turn on to heat. Once had one freak out and it heated up so much it was boiling the dmso I had on a ring stand above the hot plate",
+                "replies": [
+                    {
+                        "comment_id": "kzheuxl",
+                        "author": "Numitron",
+                        "score": 171,
+                        "text": "I'm not a labrat, just a lurker that made engineering instead of science to save my sanity.\n\nBut you're right. I've recently designed automation drivers for a hot plate/stirrer unit and found several possible cases where the unit, when operated manually in certain conditions, could lose all temp control and heat up continually to the point of causing fires, with no failsafe system preventing it. I was in contact with the manufacturer and asked for their firmware team to fix it. They provided a new firmware saying the issue was solved but it was not, and then they refused to address the issue further.\n\nSome time later, I heard that a fire had started in our customer's lab, caused by this piece of shit hot plate, and damaged other pieces of equipment. I had warned them of course that the stirrer was a safety risk, but they just dismissed the issue (they had just bought a whole lot of these plates).",
+                        "replies": [
+                            {
+                                "comment_id": "kzhgbkw",
+                                "author": "Ru-tris-bpy",
+                                "score": 35,
+                                "text": "Interesting. I've had this problem happen with old ass hot plates with no firmware possible  as well new hot plates that probably did. The death of all hot plates seems to be failing in some way from my experience.",
+                                "replies": []
+                            },
+                            {
+                                "comment_id": "kziymhu",
+                                "author": "Sound_and_Science",
+                                "score": 35,
+                                "text": "So for my entire lab career I've been \"that person\" who insists on unplugging heat generating objects to the point where someone training a new student instructed them to \"always remember to check if the postdoc unplugged it\"\n\n  \nThanks for the nightmare fuel XD",
+                                "replies": [
+                                    {
+                                        "comment_id": "kzl3wx0",
+                                        "author": "isadoreduncan",
+                                        "score": 4,
+                                        "text": "We also do that in our lab, the last person leaving the lab makes sure that all devices are unplugged. Better safe than sorry.",
+                                        "replies": []
+                                    }
+                                ]
+                            },
+                            {
+                                "comment_id": "kzi1ogb",
+                                "author": "Creepy-Specialist103",
+                                "score": 25,
+                                "text": "It happened in my lab as well, I wouldn't believe if I wasn't standing there and felt it. I was using the stirrer with turned off temp. The stirrer was cold when I put on the bottle. I was about to measure pH when I've felt the bottle was weirdly warm, I've checked the plate and it was freaking hot. Since then I'm avoiding this particular one but it seems like something is wrong with these machines",
+                                "replies": []
+                            },
+                            {
+                                "comment_id": "kzjg6yh",
+                                "author": "lea949",
+                                "score": 9,
+                                "text": "Yeah, my department has warned us that this is like a known issue with lots of hot plates. My advisor doesn't let us use hot plates overnight because of this\u2014only heating mantles",
+                                "replies": []
+                            },
+                            {
+                                "comment_id": "kzkqkc8",
+                                "author": "korhojoa",
+                                "score": 3,
+                                "text": "Can you elaborate on how? Power transistor switches on, power stage for heating element consumes enough power to cause cmos latchup on the control circuitry or what? From what I remember from using hot plates, I always wondered if there were watchdogs and secondary control circuits to handle faults. I guess not? (or it would probably depend on if you buy a cheap one or one that is less likely to start a fire)",
+                                "replies": [
+                                    {
+                                        "comment_id": "kzl2zyp",
+                                        "author": "Numitron",
+                                        "score": 5,
+                                        "text": "I can't name the manufacturer for obvious reasons, but I can say that it is a mid-range American-based company (but products made in China). \n\nFrankly the electrical design was horrendous, and I'm not talking about the software. Everything was centralized in a single PIC MCU, no secondary control loop, no mechanical thermostat failsafe (WTF?). Basically the only peripherals outside of the UI were the output drivers for heat and stirring, a thermistor input (MCU internal ADC was used) and a RPM input for the stirrer.\n\nSince everything was centralized in the MCU, all of the behavior was dictated by the software. What was happening is that the heat control loop was never actually \"off\", and when an invalid setpoint was configured (outside of the supported temp range or even NaN), the control loop would just heat the plate attempting to reach the NaN temperature... The \"Off\" state was implemented by internally matching the setpoint to the current temperature (WTF!?) which couldn't happen if the setpoint was invalid.\n\nIt was very easy to demonstrate when controlling it using the serial port, but even when just using the front panel, it was possible to enter an invalid value for the setpoint (for example a negative value in \u00b0C) and the plate would just heat up continually even if it's \"off\".\n\nThe machine itself was pretty good-looking and felt like it was a quality device. One couldn't guess the terrible engineering inside of it. \n\nTheir \"fix\" was to prevent the user from entering a negative temp setpoint, but it didn't cover all the possible invalid values that could be entered, and it was still possible to send a negative setpoint using the serial port.",
+                                        "replies": []
+                                    }
+                                ]
+                            },
+                            {
+                                "comment_id": "kzkxm1q",
+                                "author": "General_Urist",
+                                "score": 1,
+                                "text": "Damn that's frightening. What sort of bugs were causing it to lose control in manual mode?",
+                                "replies": []
+                            }
+                        ]
+                    },
+                    {
+                        "comment_id": "kzibg7j",
+                        "author": "Fluffy-Antelope3395",
+                        "score": 12,
+                        "text": "One of our hotplate/stirrer combos is either off or hotter than the surface of the sun\u2026and for some reason, you only find this out the hard way.",
+                        "replies": []
+                    }
+                ]
+            },
+            {
+                "comment_id": "kzguujq",
+                "author": "mstalltree",
+                "score": 140,
+                "text": "99% sure this is how it happened",
+                "replies": []
+            },
+            {
+                "comment_id": "kzj6932",
+                "author": "pleasehelpus_science",
+                "score": 17,
+                "text": "Additional info: \n\n(allegedly) three people independently confirmed that the heat was off at 6pm and the fire trucks were there by 10pm. \n\nThis cold room has had known electrical problems in the past where outlets randomly stop working and then work again days later? We've confirmed that circuits are not being blown. \n\nThe mass spec in the next room had an electrical surge that fried it ~4 months ago. \n\nThis apparatus was hooked into a power pack with two other apparatuses that were fine and continued running so I also think that the hot plate was the culprit.\n\nI don't think sabotage is likely. Our department is very collaborative. Everyone gets along and helps each other out. Everyone (~8 separate labs) does western blots in this cold room. Someone who just walked in could likely not even differentiate between a western run by their lab versus another because we all share power packs and use identical apparatuses. The space is key-card access so anyone from outside the department cant get in. \n\nCould an electrical surge to this hot plate (which was plugged into its own independent outlet, I.e. not the same outlet at the other hotplates) cause the heat to turn on?",
+                "replies": [
+                    {
+                        "comment_id": "kzjhzs6",
+                        "author": "lea949",
+                        "score": 14,
+                        "text": "Our safety people warned the whole department a couple years ago to never use hot plates overnight because they're known to just do this sometimes! My lab uses heating mantles if we need heat overnight, and we got some just-stir plates to use overnight too.\n\nI have no idea how this happens or why it seems to be a recurrent problem across multiple brands/types, nor why it apparently hasn't been fixed yet, but \ud83e\udd37\ud83c\udffb\u200d\u2640\ufe0f good luck in the future",
+                        "replies": []
+                    },
+                    {
+                        "comment_id": "kzji7he",
+                        "author": "Eternityislong",
+                        "score": 5,
+                        "text": "I don't think it was sabotage, a mistake is more likely than trying to cause a problem. I've accidentally turned the \"heat\" dial when I meant to turn the \"spin\" one, and fortunately caught it. When it gets down to \"rare physical and electrical phenomena\" or \"human mistake,\" human mistake is usually the likely reason.",
+                        "replies": []
+                    }
+                ]
+            },
+            {
+                "comment_id": "kzjeakx",
+                "author": "buddrball",
+                "score": 15,
+                "text": "I'd like to plug this on the top comment: we should all stop putting heat plates in the cold room. There are stir-only plates that allow you to avoid this entirely. \n\nMy grad lab had the same thing happen. Fire alarm went off, building evacuated, fire department came. Then a fireman came out to report that it was a melted plastic fire in the cold room. One postdoc said, hey wait that's not possible\u2026I was just in there. Bro snitched on himself in that moment. Gold. He mistook heat for stir, and it took less than an hour for all this to happen. \n\nSo if you can, just remove the hazard.",
+                "replies": [
+                    {
+                        "comment_id": "kzk2gb9",
+                        "author": "danielsaid",
+                        "score": 1,
+                        "text": "Better to rat on yourself than gaslight the entire department. It's not like you guys financially punished him right, just socially?\u00a0",
+                        "replies": [
+                            {
+                                "comment_id": "kzl3oyg",
+                                "author": "buddrball",
+                                "score": 3,
+                                "text": "He wasn't punished at all! Safety accidents should never incur a punishment, imo. We laughed about it at the moment, then swapped out all hot plates for stir plates, and that was the end of it. I'm sure he would have spoken up anyways, since that was our type of lab culture. I just loved how he was absolutely sure the fire department was wrong. So silly.",
+                                "replies": []
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "comment_id": "kzgz7y1",
+                "author": "Marathe56",
+                "score": 57,
+                "text": "From Corning's website (https://ecatalog.corning.com/life-sciences/b2b/US/en/Equipment/Constant-Temperature-Equipment/Digital-Hot-Plates/Corning%C2%AE-Digital-Stirring-Hot-Plates/p/6795-420D?pagePath=p/6795-420D):\n\n\"Microprocessor maintains consistent and repeatable temperature settings from 5\u00b0C (if ambient temperature is 0\u00b0C or lower) up to 550\u00b0C.\"\n\nIt could be that the hotplate kept switching on to maintain 5C in the cold room and in the process melted the plastic tank.",
+                "replies": [
+                    {
+                        "comment_id": "kzgzxj0",
+                        "author": "Eternityislong",
+                        "score": 41,
+                        "text": "That just means you can set it to 5C at the lowest. It has a PID controller and there is no way it would let itself do a thermal runaway with its sensors and circuitry. You can't set it to 5C if you are in a room above 5C since it doesn't cool down.",
+                        "replies": [
+                            {
+                                "comment_id": "kzh1sk6",
+                                "author": "Marathe56",
+                                "score": 25,
+                                "text": "True. Most stir plates have a click at the off position, which generally breaks the circuit. Assuming all possibilities, one scenario could be that the knobe was set to lowest but not clicked into off position. Though not sure if this model has that.",
+                                "replies": [
+                                    {
+                                        "comment_id": "kzh7ch4",
+                                        "author": "Eternityislong",
+                                        "score": 11,
+                                        "text": "It would just be set to 5 C in that scenario. The thing has a temp sensor so it would only let it get to 5 C. 5 C wouldn't do this.",
+                                        "replies": [
+                                            {
+                                                "comment_id": "kzhhu1n",
+                                                "author": "Character-Junket-776",
+                                                "score": 8,
+                                                "text": "What if the condensation in the cold room short circuited something?",
+                                                "replies": [
+                                                    {
+                                                        "comment_id": "kzkjf54",
+                                                        "author": "gradskull",
+                                                        "score": 1,
+                                                        "text": "Condensation, or liquid leaking from the electrophoresis vessel?",
+                                                        "replies": []
+                                                    }
+                                                ]
+                                            }
+                                        ]
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "comment_id": "kzix6lx",
+                "author": "CathalMacSuibhne",
+                "score": 5,
+                "text": "Sometimes these hotplates malfunction",
+                "replies": []
+            }
+        ]
+    },
+    {
+        "comment_id": "kzgmerx",
+        "author": "thegimp7",
+        "score": 574,
+        "text": "That hot plate was turned on. No question",
+        "replies": []
+    },
+    {
+        "comment_id": "kzgm23v",
+        "author": "the_magic_gardener",
+        "score": 284,
+        "text": "I can't think of any explanation that doesn't involve the heat having been on. It appears to be scorched specifically on the bottom. A wet transfer box doesn't have any wiring that touches the bottom. Tangential question, why are you stirring the transfer buffer during transfer?",
+        "replies": [
+            {
+                "comment_id": "kzgpng1",
+                "author": "rewp234",
+                "score": 193,
+                "text": "I would assume this was in their lab's western protocol for ages because someone once said it helped with no evidence whatsoever",
+                "replies": [
+                    {
+                        "comment_id": "kzgq25k",
+                        "author": "Tangerita",
+                        "score": 96,
+                        "text": "We do it too, presumably to allow the mixing of the cooling and the heating transfer buffer, so as to maintain an overall low temperature in the tank.",
+                        "replies": [
+                            {
+                                "comment_id": "kzgskyl",
+                                "author": "the_magic_gardener",
+                                "score": 35,
+                                "text": "That's interesting. I suppose for a high amp, fast transfer over an hour, stirring could increase the quality of the transfer by helping heat dissipation. I've never heard of anyone doing this. For an overnight transfer, especially at OPs super low power choice of 0.03A, I doubt it's doing anything useful. Transfer in a walk in 4 degree at anything less than 0.2A is not going to have issues with heat dissipation, and I suspect a side by side comparison of blots done with and without stirring would be uninteresting, even for a 1 hour 0.8A transfer. \n\nBut hey, I've never tried it so maybe I'm wrong.",
+                                "replies": []
+                            },
+                            {
+                                "comment_id": "kzgtpzl",
+                                "author": "moderateTrouble",
+                                "score": 12,
+                                "text": "its easier just to run a transfer in a 4\u00b0C fridge, if you want to maintain an overall low temp. edit: i read too fast, didnt realize this was done in a cold room. im having trouble understanding why you'd need to worry about the transfer overheating (or why you'd need to have a stir bar) in that case.",
+                                "replies": []
+                            },
+                            {
+                                "comment_id": "kzgz677",
+                                "author": "Ok_Bookkeeper_3481",
+                                "score": 2,
+                                "text": "Yep, precisely! We used to have exactly the same stirring setup.",
+                                "replies": []
+                            }
+                        ]
+                    },
+                    {
+                        "comment_id": "kzgq3p6",
+                        "author": "The_Robot_King",
+                        "score": 12,
+                        "text": "I actually learned this myself way back when. I reckon it could help circulate the buffer for better temp regulation",
+                        "replies": []
+                    },
+                    {
+                        "comment_id": "kzh88ie",
+                        "author": "lt_dan_zsu",
+                        "score": 8,
+                        "text": "I know it's not common, but I've only every done semi dry transfers, and everyone is constantly talking about how much wet transfers suck. Probably ignorant, but what's the advantage? People always talk about how much westerns suck, but I found them relatively easy (although tedious) once I had the technique down.",
+                        "replies": [
+                            {
+                                "comment_id": "kzhki2k",
+                                "author": "rewp234",
+                                "score": 6,
+                                "text": "Wet transfers are supposedly more efficient though they take longer and are a lot messier so there are more things that can become a problem. Mostly boils down to what your lab has or can afford",
+                                "replies": []
+                            }
+                        ]
+                    },
+                    {
+                        "comment_id": "kziptow",
+                        "author": "pleasehelpus_science",
+                        "score": 4,
+                        "text": "This is exactly it \ud83d\ude02",
+                        "replies": []
+                    }
+                ]
+            },
+            {
+                "comment_id": "kzgu65r",
+                "author": "Bruggok",
+                "score": 24,
+                "text": "When I started PhD I too was taught to stir bar/plate in a cold room. After I joined the lab I showed wet transfer works fine without stirring so nobody bothered me after that.",
+                "replies": []
+            },
+            {
+                "comment_id": "kzhdg6b",
+                "author": "thylako1dal",
+                "score": 9,
+                "text": "\"Stirring during transfer helps maintain uniform conductivity and temperature. Failure to properly control buffer temperature may result in poor transfer and poses a potential safety hazard.\" From the Bio-Rad Protein Blotting Guide",
+                "replies": []
+            },
+            {
+                "comment_id": "kzhr46o",
+                "author": "EquipLordBritish",
+                "score": 8,
+                "text": "The newer biorad units come with cold packs that fit in with the transfer.  Some people like to put a stirbar in to help circulate the cold buffer near the cold pack with the actual transfer sandwich.  I don't know if they did that here.  Clearly someone thought they turned on the spinner and accidentally turned the heat up to 400.",
+                "replies": []
+            }
+        ]
+    },
+    {
+        "comment_id": "kzgnv34",
+        "author": "Magic_mousie",
+        "score": 255,
+        "text": "Another vote for hot plate was turned on. If it walks like a duck, sounds like a duck, and is crispy like a duck...",
+        "replies": [
+            {
+                "comment_id": "kzgrxwm",
+                "author": "crisprcas32",
+                "score": 37,
+                "text": "![gif](giphy|eMZRByRx9fd2o)",
+                "replies": []
+            },
+            {
+                "comment_id": "kzgwao0",
+                "author": "i_saw_a_tiger",
+                "score": 26,
+                "text": "So is it sabotage or stupidity? \nBecause there are some pretty dumb actions I've seen over the years\u2026 but this looks sus tbh.",
+                "replies": [
+                    {
+                        "comment_id": "kzgwrfb",
+                        "author": "Magic_mousie",
+                        "score": 58,
+                        "text": "What's that they say? Never ascribe to malice that which can be adequately explained by incompetence?\n\nThough I have heard some awful things about the competitive nature of US academia. This would be an act of self-sabotage too though surely, if that's communal equipment? Much easier just to switch the red/black or turn up/down the voltage for more subtle sabotage. \n\nIf this was the best laid plan of my lab nemesis I wouldn't be too worried.",
+                        "replies": [
+                            {
+                                "comment_id": "kzgyakl",
+                                "author": "i_saw_a_tiger",
+                                "score": 14,
+                                "text": "Oh I work with the someone that is both malicious *and* lazy and at times, incompetent, so I do believe that there are people with malicious intentions. Did you happen to read or hear the Nature podcast about bullying in academia? Unfortunately, it did not surprise me one bit because of certain personalities I've encountered over the years. If I was OP, I'd definitely tell their PI what happened because \"accidents\" (if it were sabotage) could keep happening in the future.\n\nBtw I LOVE your username!!",
+                                "replies": [
+                                    {
+                                        "comment_id": "kzgyv1w",
+                                        "author": "Magic_mousie",
+                                        "score": 4,
+                                        "text": "Aww thank you! And happy cake day to you!\n\nHope your lab nemesis leaves soon. I didn't hear the podcast no.",
+                                        "replies": []
+                                    }
+                                ]
+                            },
+                            {
+                                "comment_id": "kzi1xgp",
+                                "author": "30andnotthriving",
+                                "score": 3,
+                                "text": "As someone who was the victim of malice... I unfortunately still believe in this saying... But sometimes they really 'are' out to get you",
+                                "replies": []
+                            }
+                        ]
+                    },
+                    {
+                        "comment_id": "kzgxqgl",
+                        "author": "stirwise",
+                        "score": 32,
+                        "text": "Having accidentally turned up the heat instead of the stirring speed more times than I can count, my money is on stupidity.",
+                        "replies": [
+                            {
+                                "comment_id": "kzgz6t1",
+                                "author": "i_saw_a_tiger",
+                                "score": 7,
+                                "text": "In regards to this situation, I can't help but laugh at your username rn \ud83d\ude04\n\nOn a serious note, it is okay, we are all human & make mistakes. That's how we learn.\n\nI'm more worried about someone doing this maliciously to OP.\nDoesn't feel good to have an experiment tampered with.",
+                                "replies": [
+                                    {
+                                        "comment_id": "kzh472t",
+                                        "author": "stirwise",
+                                        "score": 4,
+                                        "text": "Yeah, I get what you mean. My PI had a saboteur in her fellowship lab. Should OP do the same cooling/spinning method again, they should consider putting tape over the stirring knob or something, to make mistakes less likely, and if it happens again that's solid evidence it's intentional.",
+                                        "replies": []
+                                    }
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        "comment_id": "kzgyo9p",
+                        "author": "Angry_Neutrophil",
+                        "score": 9,
+                        "text": "It also could be a honest mistake. Accidents do happen, no one is able to perform at 100% all the time, and we all know how overloaded with work/papers/experiments we  can be sometimes.\n\nMaybe who was setting the equipment turned both knobs by accident, or one of the knobs was faulty.\n\nWe have some stirrers that the knob is now \"boolean\": either they don't spin at all, or they are at maximum speed.\n\nMaybe in this picture, the heating knob is faulty and very sensible to bumps, and it either is maximum heat or off.",
+                        "replies": []
+                    }
+                ]
+            },
+            {
+                "comment_id": "kzinyvq",
+                "author": "pleasehelpus_science",
+                "score": 1,
+                "text": "\ud83d\ude02\ud83d\ude02\ud83d\ude02",
+                "replies": []
+            }
+        ]
+    },
+    {
+        "comment_id": "kzgpv3e",
+        "author": "Jealous-Ad-214",
+        "score": 58,
+        "text": "The heat was definitely on. This is why we eliminated dual heat/stir plates\u2026 too many accidents.",
+        "replies": []
+    },
+    {
+        "comment_id": "kzgmzt7",
+        "author": "yuhtriums",
+        "score": 63,
+        "text": "The heat on that stir plate was definitely on, seen it a time or two on the same model",
+        "replies": []
+    },
+    {
+        "comment_id": "kzgs1tt",
+        "author": "boobs14",
+        "score": 46,
+        "text": "When you accidentally denature the western blot itself",
+        "replies": []
+    },
+    {
+        "comment_id": "kzgucpa",
+        "author": "Chemie-",
+        "score": 20,
+        "text": "Somebody is a serious dickhead, or God legitamitely hates you. Sorry about it either way",
+        "replies": []
+    },
+    {
+        "comment_id": "kzgmvkx",
+        "author": "stage_directions",
+        "score": 36,
+        "text": "r/westernblots",
+        "replies": [
+            {
+                "comment_id": "kzhkoiu",
+                "author": "Mugstotheceiling",
+                "score": 12,
+                "text": "![gif](giphy|qkJJRL9Sz1R04)",
+                "replies": []
+            },
+            {
+                "comment_id": "kzgpeo5",
+                "author": "LowExtension12",
+                "score": 3,
+                "text": "Hahaha",
+                "replies": []
+            }
+        ]
+    },
+    {
+        "comment_id": "kzgq3f2",
+        "author": "brick101101",
+        "score": 14,
+        "text": "I'm with everyone else that hotplate was definitely turned on I've melted/cooked a few things by accidentally using a mag stirer when someone's left the heat on",
+        "replies": []
+    },
+    {
+        "comment_id": "kzh28j9",
+        "author": "gene_doc",
+        "score": 13,
+        "text": "Melting/burning in bottom at contact point with stir plate. Yep, heat was on. First day lesson for fire marshalls.",
+        "replies": [
+            {
+                "comment_id": "kzhrh2a",
+                "author": "ladybughappy",
+                "score": 3,
+                "text": "Yeah maybe the liquid kept it from bursting into flames",
+                "replies": []
+            }
+        ]
+    },
+    {
+        "comment_id": "kzh8us4",
+        "author": "lt_dan_zsu",
+        "score": 12,
+        "text": "Two possibilities are dipshitery or equipment malfunction, and dipshitery seems more likely to me. If you're in a shared lab space, this is a department wide email level fuck up. Whoever did this should lose their job. Not because they hid their fuck up, but because they're too chicken shit to own up to it.",
+        "replies": [
+            {
+                "comment_id": "kzhg12f",
+                "author": "PreparationOk4883",
+                "score": 20,
+                "text": "This exact plate model was removed from our university and we swapped to other brands because we had two runaway hot plates. One of them wasn't even turned on for heat it was just stirring like this one, ended up burning a lab down.",
+                "replies": []
+            }
+        ]
+    },
+    {
+        "comment_id": "kzgv3ez",
+        "author": "mstalltree",
+        "score": 23,
+        "text": "The better question is: who turned on the heat on that hot plate?",
+        "replies": [
+            {
+                "comment_id": "kziyl1u",
+                "author": "Damascus_ari",
+                "score": 7,
+                "text": "Hot plate could have malfunctioned for whatever reason and heated itself up. These things sadly happen.",
+                "replies": []
+            }
+        ]
+    },
+    {
+        "comment_id": "kzh3wga",
+        "author": "cellsorter",
+        "score": 8,
+        "text": "This likely happened by adjusting the dial on the right by 0.000001 degrees...",
+        "replies": []
+    },
+    {
+        "comment_id": "kzgoijx",
+        "author": "flashmeterred",
+        "score": 15,
+        "text": "I'd guess make new gels and start again.\u00a0\n\n\n\n\nKidding. That is not caused by the electrodes. They have long since stopped conducing any current. The hot plate was on.",
+        "replies": []
+    },
+    {
+        "comment_id": "kzhcdsy",
+        "author": "PseudocodeRed",
+        "score": 7,
+        "text": "The hot plate was on. Whether someone turned it on or whether some weird shit happened with the electric current from the gel that turned it on, idk. But that hot plate was on.",
+        "replies": []
+    },
+    {
+        "comment_id": "kzi1thc",
+        "author": "polkadotsci",
+        "score": 6,
+        "text": "Wow, I can't see your bands at all. I think this might be the worst Western blot on this sub. Congratulations! (Also I'm so glad nobody was hurt!)",
+        "replies": []
+    },
+    {
+        "comment_id": "kzjklih",
+        "author": "dragontoast26",
+        "score": 6,
+        "text": "I have that exact hot plate, I accidentally turned the heat on on two separate occasions, with not so nice results. I couldn't figure out how that could happen at first, but then I fiddled with the knob and found that it doesn't click well when off, the knob is loose, and it takes very little effort to turn on. Turns out I was brushing it with my PPE when I walked past it. A ridiculous design, and since I rarely need heat I covered the knob in electric tape to keep it from turning on.",
+        "replies": []
+    },
+    {
+        "comment_id": "kzjlnxp",
+        "author": "unbalancedcentrifuge",
+        "score": 5,
+        "text": "The way it is melted does not look like a gel apparatus issue...it looks like someone turned on your hot plate.",
+        "replies": []
+    },
+    {
+        "comment_id": "kzgvmfb",
+        "author": "Sakowuf_Solutions",
+        "score": 6,
+        "text": "This is how I run gels.\n\n\ud83e\udd37\u200d\u2642\ufe0f",
+        "replies": []
+    },
+    {
+        "comment_id": "kzhfn7u",
+        "author": "onetwoskeedoo",
+        "score": 5,
+        "text": "That is gnarly",
+        "replies": []
+    },
+    {
+        "comment_id": "kzijtn9",
+        "author": "anon1moos",
+        "score": 4,
+        "text": "I'm not going to go dig up all the references, but there have been instances of these Corning hot plates malfunctioning and heating. So before you start getting paranoid and accusing your lab members of sabotage, consider that it could have just been equipment failure.",
+        "replies": []
+    },
+    {
+        "comment_id": "kzkpjhk",
+        "author": "barmanrags",
+        "score": 4,
+        "text": "Some one turned on the hot plate",
+        "replies": []
+    },
+    {
+        "comment_id": "kzkdjji",
+        "author": "bunnytherider",
+        "score": 3,
+        "text": "have you tried turning it off and turning it on again?",
+        "replies": []
+    },
+    {
+        "comment_id": "kzko1hp",
+        "author": "Cardie1303",
+        "score": 3,
+        "text": "I bet my total synthesis product on someone turning the heat plate on, noticing everything melting, turning it off, and now pretending to not know anything about it.",
+        "replies": []
+    },
+    {
+        "comment_id": "kzgzs74",
+        "author": "missprincesscarolyn",
+        "score": 2,
+        "text": "Oof, that's a bummer. I love Bio-Rad gel tanks and their western workflow stuff in general. Far superior to any other companies.",
+        "replies": []
+    },
+    {
+        "comment_id": "kzh4sia",
+        "author": "schowdur123",
+        "score": 2,
+        "text": "Wow",
+        "replies": []
+    },
+    {
+        "comment_id": "kzhmfpe",
+        "author": "Broad_Poetry_9657",
+        "score": 2,
+        "text": "It was the hot plate.",
+        "replies": []
+    },
+    {
+        "comment_id": "kzhzzt6",
+        "author": "Hucklepuck_uk",
+        "score": 2,
+        "text": "If it's old and In the cold room its probably picked up loads of moisture over time and set the heating element off",
+        "replies": []
+    },
+    {
+        "comment_id": "kzie3mf",
+        "author": "Msink",
+        "score": 2,
+        "text": "Definitely the hot plate. I have had a real life case. A colleague used hotplate with stirrer function to start the stirrer, but she started the hot plate. Someone happened to see the smoke and told the person. She was too mad that someone sabotaged her gel by switching on the hot plate.",
+        "replies": []
+    },
+    {
+        "comment_id": "kziuv5d",
+        "author": "Bearaf123",
+        "score": 2,
+        "text": "And that's why we were never allowed leave things running on a hot plate with just the stirrer running unattended. Take it as a lesson learned, this could have been much worse",
+        "replies": []
+    },
+    {
+        "comment_id": "kziwd3t",
+        "author": "Prof__Potato",
+        "score": 2,
+        "text": "If the plate was in the cold room, toss it. It could have shorted or something went wrong. I hate doing transfers ON at 4c because electronics do strange shit - especially if they're in and out of the cold room and accumulate condensation. Or\u2026 someone fucked with your hot plate\u2026  I do my transfers at room temp in an ice bath at 100v for 1h because of these reasons.",
+        "replies": [
+            {
+                "comment_id": "kzj7ry7",
+                "author": "pleasehelpus_science",
+                "score": 1,
+                "text": "This hot plate does in fact get moved in and out of the cold room often\u2026",
+                "replies": [
+                    {
+                        "comment_id": "kzjaajn",
+                        "author": "Prof__Potato",
+                        "score": 2,
+                        "text": "If it wasn't someone who (accidentally?) turned on the hot plate, it's very likely that. We've always either kept equipment dedicated to the cold room or room temp. Moving things in and out isn't good for the wiring and circuit board because of the condensation. Might be a good idea to label equipment dedicated to the cold room so they're not moved. Again, I personally don't trust any equipment in the cold room if I'm not watching it from time to time because I've had similar experiences.",
+                        "replies": [
+                            {
+                                "comment_id": "kzkerc3",
+                                "author": "Mouse_Parsnip_87",
+                                "score": 3,
+                                "text": "This. \n\nHave dedicated equipment in the cold room if you're going to be using it more than once or twice. Go on eBay and buy used to put in there: the extra cost is worth not having this happen again.",
+                                "replies": []
+                            }
+                        ]
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "comment_id": "kzjay3d",
+        "author": "loves_to_barf",
+        "score": 2,
+        "text": "I am pretty surprised by these comments. There's a good chance this was a malfunction. This model specifically (Corning PC-420D) has been reported to undergo runaway operation: [https://www.osti.gov/servlets/purl/1506818](https://www.osti.gov/servlets/purl/1506818)\n\nThese type of dual heat and stir plates are somewhat unsafe due to this behavior. \n\nDefinitely report this to whatever health and safety exists at your institution. You might be able to tear it down and test for a failed switch if you care.",
+        "replies": []
+    },
+    {
+        "comment_id": "kzk1ykx",
+        "author": "AmbitiousStaff5611",
+        "score": 2,
+        "text": "I see by the cover it's at Bio-Rad. I used to work there too! Lol. All the equipment there is extremely old and we consistently had sir/hot plates that were set to zero but they would stir and or heat anyway. You just had to adjust the dial further down than zero or at max to actually be at zero or some it was impossible to make it not to stir, you had to unplug it. This is why I never used a combo plate like this unless I actually needed heat and I would never let it run over night. I learned this the hard way too.",
+        "replies": []
+    },
+    {
+        "comment_id": "kzkeru3",
+        "author": "BiologyIsHot",
+        "score": 2,
+        "text": "You don't need a stir bar for that kind of transfer apparatus, especially in a cold room... You probably don't even need it cold tbh, you can generally run these kind of boxes overnight at lower voltage with just an ice pack. I'm actually almost sure they provide instructions associated with they specific apparatus for this.",
+        "replies": []
+    },
+    {
+        "comment_id": "kzgrlg4",
+        "author": "Orfelio09",
+        "score": 2,
+        "text": "Seems like heat was turned on. Pushed against it accidentally as you took hand away? \n\nEven if not, those get hot and adding the movement of molecules with the stir bar = more heat. Run these in ice buckets with ice surrounding box if you intend to run at high voltage. You don't need to stir it that doesn't do anything",
+        "replies": []
+    },
+    {
+        "comment_id": "kzgqjt9",
+        "author": "esoteric1",
+        "score": 1,
+        "text": "Is it typical to run a western with a stir bar?",
+        "replies": [
+            {
+                "comment_id": "kzgsqw5",
+                "author": "OverTheRanbow",
+                "score": 8,
+                "text": "Yes, if you are using a ice pack in the chamber only. This helps distribute temperature and prevent the gels from overheating during transfer\n\nIf you encase the entire apparatus in a container of ice then it's not necessary.",
+                "replies": [
+                    {
+                        "comment_id": "kzh77nc",
+                        "author": "esoteric1",
+                        "score": 2,
+                        "text": "interesting...i never had to do that. just ran what i thought was a quick hour long western with purified proteins and it never got hot enough. Maybe i am not remembering the details correctly though.",
+                        "replies": []
+                    },
+                    {
+                        "comment_id": "kzhaee7",
+                        "author": "Breeela",
+                        "score": 1,
+                        "text": "I was just going to ask where's the ice packs",
+                        "replies": []
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "comment_id": "kzgyuje",
+        "author": "flubby__chubby",
+        "score": 1,
+        "text": "Breh",
+        "replies": []
+    },
+    {
+        "comment_id": "kzh1f7y",
+        "author": "some-shady-dude",
+        "score": 1,
+        "text": "I\u2026.i would assume god hates you or someone sabotaged your stuff",
+        "replies": []
+    },
+    {
+        "comment_id": "kzhzsg2",
+        "author": "Sam_of_Truth",
+        "score": 1,
+        "text": "Is it at all possible that someone sabotaged your work? That's a crazy thing that doesn't happen very often, but is not unheard of, especially in labs with a lot of internal competition. \n\nI don't think there's much possibility that the entire liquid volume evaporated away AND the plastic container was carbonized unless the hot plate was turned on for a long time.",
+        "replies": []
+    },
+    {
+        "comment_id": "kzhztt9",
+        "author": "Hucklepuck_uk",
+        "score": 1,
+        "text": "Yeah that was heat plate",
+        "replies": []
+    },
+    {
+        "comment_id": "kzi1po7",
+        "author": "ObjectiveDeparture51",
+        "score": 1,
+        "text": "I don't know what I'm seeing but it looks scary af",
+        "replies": []
+    },
+    {
+        "comment_id": "kzi378c",
+        "author": "DNA_hacker",
+        "score": 1,
+        "text": "Clearly the heat was on",
+        "replies": []
+    },
+    {
+        "comment_id": "kzi6dqi",
+        "author": "Plato428BC",
+        "score": 1,
+        "text": "The hot plate was on",
+        "replies": []
+    },
+    {
+        "comment_id": "kzi6hd9",
+        "author": "gernophil",
+        "score": 1,
+        "text": "Next time don't stir, but simply put the whole thing in an ice bucket.",
+        "replies": []
+    },
+    {
+        "comment_id": "kzid0h8",
+        "author": "gobbomode",
+        "score": 1,
+        "text": "This is why it's a good idea to never leave hot plates plugged in \ud83d\ude05 damn lab ghosts",
+        "replies": []
+    },
+    {
+        "comment_id": "kzio9dw",
+        "author": "bluedust2",
+        "score": 1,
+        "text": "So if the hotplate used a solid state relay in the hot plate part then they can fail and the cheapest and easiest SSRs to buy fail on. So part fails, turns on and then eventually thermal fuse blows or other parts also fail.\n\n&#x200B;\n\nI have been involved in replacing relays on a few scientific heating parts because of this.",
+        "replies": []
+    },
+    {
+        "comment_id": "kzj2nb6",
+        "author": "Fogh1999",
+        "score": 1,
+        "text": "Having done something of a very similar nature. I am almost positive the hot plate was on.",
+        "replies": []
+    },
+    {
+        "comment_id": "kzj4fbh",
+        "author": "alchilito",
+        "score": 1,
+        "text": "Bad buffer vibes",
+        "replies": []
+    },
+    {
+        "comment_id": "kzj5wfb",
+        "author": "TastyCroquet",
+        "score": 1,
+        "text": "Those hotplates are known to go apeshit. We have a sign to never leave them unattended next to ours because somebody in the chem department had an oil fire a while back.",
+        "replies": []
+    },
+    {
+        "comment_id": "kzjkfxa",
+        "author": "magnet_jock",
+        "score": 1,
+        "text": "Hope that wasn't a native gel.",
+        "replies": []
+    },
+    {
+        "comment_id": "kzk3qzp",
+        "author": "HitHardStrokeSoft",
+        "score": 1,
+        "text": "You were very lucky it didn't start a fire given what else was in the cold room",
+        "replies": []
+    },
+    {
+        "comment_id": "kzmrkul",
+        "author": "Spirogyra6777",
+        "score": 1,
+        "text": "I had a kid work in the lab who literally scored a 36 on the MCAT. (I made him show me) He went to heat water on a hot plate, and chose a plastic beaker.",
+        "replies": []
+    },
+    {
+        "comment_id": "kzpodpw",
+        "author": "SakuraFairy",
+        "score": 1,
+        "text": "Safety officer bout to have a lot of writing to do \ud83d\udc80... About a rogue hotplate of course",
+        "replies": []
+    },
+    {
+        "comment_id": "kzpql6f",
+        "author": "Traditional_Risk_818",
+        "score": 1,
+        "text": "Battery fire?",
+        "replies": []
+    },
+    {
+        "comment_id": "kzzsvwb",
+        "author": "Beautiful-Ad3012",
+        "score": 1,
+        "text": "I suspect there would be a rule that says all hot plates or what this may be must be cleared and cool before leaving the area.",
+        "replies": []
+    },
+    {
+        "comment_id": "kzgrtc7",
+        "author": "igetmywaterfrombeer",
+        "score": 1,
+        "text": "*cries in mini Protean*",
+        "replies": []
+    },
+    {
+        "comment_id": "kzgpf77",
+        "author": "Backwoodsintellect",
+        "score": 0,
+        "text": "In our lab, those exact machines are about half encased in literal ice in a tub when they run westerns. Ty. Now I know why!!! It gets hot af! Never in my days have I seen one see one a hot plate with just a cool pack under it. I don't even run westerns & I'd question that setup, lol. Edit to say that our power supplies are seriously prob 50 years old or so but..",
+        "replies": [
+            {
+                "comment_id": "kzgsk2s",
+                "author": "MydogisaToelicker",
+                "score": 16,
+                "text": "If the transfer solution got hot enough to melt plastic it would have blown the lid off of the apparatus.  All the people saying hot plate are right.",
+                "replies": [
+                    {
+                        "comment_id": "kzgvust",
+                        "author": "Backwoodsintellect",
+                        "score": 1,
+                        "text": "Yeah, I admittedly don't know. I've just always seen ours run on ice but I never asked why. I'll ask someone Monday. :)",
+                        "replies": [
+                            {
+                                "comment_id": "kzm31s8",
+                                "author": "MydogisaToelicker",
+                                "score": 2,
+                                "text": "It does heat up, just not nearly enough to melt plastic.  And hot liquid would have melted the lid, not the base.",
+                                "replies": []
+                            }
+                        ]
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "comment_id": "kzgnj8b",
+        "author": "Euphoriand",
+        "score": -2,
+        "text": "I love running gels with higher volatage, it just safes so much time",
+        "replies": []
+    }
+]
