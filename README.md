@@ -13,6 +13,6 @@ These actions can be parametarized with values of your own choice for:
   - Filter limit: number of posts you want to collect (maximum API limit is 1000)
 
 For using the API, the user should provide the following PRAW API credentials in the .env file:
-MY_SECRET = 
-MY_CLIENT_ID = 
-MY_USER_AGENT = 
+  1) MY_SECRET =
+  2) MY_CLIENT_ID =
+  3) MY_USER_AGENT = 
